@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HemoLink | AI Blood Matching Infrastructure</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @keyframes marquee {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
+    }
+    .animate-marquee {
+      animation: marquee 12s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="relative">
+  <div class="glow-orb top-20 left-[-100px]"></div>
+
+  <!-- SIDEBAR OVERLAY -->
+  <div id="sidebar-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"></div>
+
+  <!-- NAVIGATION LAYER -->
+  <nav class="sticky top-0 z-50 bg-[#0B0F19]/80 backdrop-blur-md border-b border-white/10 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-bold text-2xl text-white">
+        <span class="text-[#C1121F]">🩸</span>Hemo<span class="text-[#C1121F]">Link</span>
+      </a>
+      <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <a href="index.html" class="text-white border-b-2 border-[#C1121F] pb-1">Home</a>
+        <a href="donor.html" class="hover:text-white transition-colors">Donor Registration</a>
+        <a href="request.html" class="hover:text-white transition-colors">Request Blood</a>
+        <a href="dashboard.html" class="hover:text-white transition-colors">Dashboard</a>
+        <a href="about.html" class="hover:text-white transition-colors">About</a>
+        <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+        <a href="login.html" class="px-5 py-2.5 bg-[#C1121F] hover:bg-[#A00F18] text-white rounded-lg transition-all font-semibold">Login Portal</a>
+      </div>
+      <button id="mobile-burger" class="lg:hidden text-white p-1 focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+
+    <!-- MOBILE VERTICAL SIDEBAR -->
+    <div id="mobile-sidebar" class="fixed top-0 right-0 h-full w-72 bg-[#0B0F19]/95 backdrop-blur-xl border-l border-white/10 p-6 z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+          <span class="font-bold text-xl text-white">🩸 Menu</span>
+          <button id="mobile-close" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+        </div>
+        <div class="flex flex-col gap-5 text-base font-medium text-gray-300">
+          <a href="index.html" class="py-2 px-3 bg-white/5 rounded-lg text-white">Home</a>
+          <a href="donor.html" class="py-2 px-3 hover:bg-white/5 rounded-lg hover:text-white transition-all">Donor Registration</a>
+          <a href="request.html" class="py-2 px-3 hover:bg-white/5 rounded-lg hover:text-white transition-all">Request Blood</a>
+          <a href="dashboard.html" class="py-2 px-3 hover:bg-white/5 rounded-lg hover:text-white transition-all">Dashboard</a>
+          <a href="about.html" class="py-2 px-3 hover:bg-white/5 rounded-lg hover:text-white transition-all">About</a>
+          <a href="contact.html" class="py-2 px-3 hover:bg-white/5 rounded-lg hover:text-white transition-all">Contact</a>
+        </div>
+      </div>
+      <div class="pt-6 border-t border-white/10"><a href="login.html" class="block text-center w-full py-3 bg-[#C1121F] text-white rounded-xl font-semibold">Login Portal</a></div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="max-w-7xl mx-auto px-6 pt-16 pb-24 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+    <div class="animate-fade-in">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-950/50 border border-red-500/30 rounded-full text-xs font-semibold text-red-400 mb-6">
+        <span class="flex h-2 w-2 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span></span> AI-Powered Emergency Dispatch System Node
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+        Connecting Donors. <br><span class="text-[#C1121F] bg-gradient-to-r from-red-500 to-rose-400 bg-clip-text text-transparent">Saving Lives.</span>
+      </h1>
+      <p class="text-gray-400 text-lg mb-8 max-w-xl">HemoLink helps hospitals and patients find compatible blood donors quickly during emergencies through intelligent AI-powered matching.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="donor.html" class="px-8 py-4 bg-[#C1121F] hover:bg-[#A00F18] text-white font-semibold rounded-xl transition-all shadow-lg shadow-red-900/30">Register as Donor</a>
+        <a href="request.html" class="px-8 py-4 bg-slate-900 border border-slate-700 text-white font-semibold rounded-xl transition-all hover:bg-slate-800">Request Blood</a>
+      </div>
+    </div>
+
+    <!-- HIGH-INFO ANIMATED LIVE MONITOR -->
+    <div class="relative flex flex-col gap-6 items-center w-full">
+      <div class="glass-panel p-6 w-full max-w-md border border-white/10 shadow-2xl relative z-10 animate-fade-in">
+        <div class="flex justify-between items-center mb-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center p-2.5"><div class="w-3 h-3 bg-[#C1121F] rounded-full animate-pulse"></div></div>
+            <div>
+              <h4 class="text-white font-bold text-sm">Active AI Cluster</h4>
+              <p class="text-xs text-gray-400">Keffi Regional Node</p>
+            </div>
+          </div>
+          <span class="text-xs text-emerald-400 font-mono bg-emerald-950/80 px-2 py-1 rounded border border-emerald-500/30">LIVE MATCHING</span>
+        </div>
+        <div class="space-y-3 mb-6">
+          <div class="p-3 bg-slate-900/50 rounded-lg border border-white/5 flex justify-between items-center text-xs">
+            <span class="text-gray-400">Emergency Broadcast ID</span>
+            <span class="font-mono text-white">#REQ-2026-904</span>
+          </div>
+          <div class="p-3 bg-slate-900/50 rounded-lg border border-white/5 flex justify-between items-center text-xs">
+            <span class="text-gray-400">Optimal Matching Strategy</span>
+            <span class="text-red-400 font-semibold">O Negative Vector</span>
+          </div>
+        </div>
+
+        <!-- NEW REAL-TIME INGESTION MARQUEE FEED -->
+        <div class="border-t border-white/10 pt-4">
+          <p class="text-[10px] uppercase font-bold tracking-wider text-gray-500 mb-3">Live Network Triage Ingestion</p>
+          <div class="h-28 overflow-hidden relative bg-slate-950/60 rounded-lg p-2 border border-white/5">
+            <div class="flex flex-col gap-2 animate-marquee">
+              <div class="p-2 bg-red-950/30 border border-red-500/20 rounded text-[11px] flex justify-between text-gray-300"><span>🚨 FMC Keffi: Req O-</span><span class="text-red-400 font-mono">Matching...</span></div>
+              <div class="p-2 bg-slate-900/80 border border-white/5 rounded text-[11px] flex justify-between text-gray-300"><span>✅ Node 042: Assigned A+</span><span class="text-emerald-400 font-mono">Secured</span></div>
+              <div class="p-2 bg-slate-900/80 border border-white/5 rounded text-[11px] flex justify-between text-gray-300"><span>📢 Gen Hospital: Req B+</span><span class="text-amber-400 font-mono">Routing</span></div>
+              <div class="p-2 bg-red-950/30 border border-red-500/20 rounded text-[11px] flex justify-between text-gray-300"><span>🚨 Specialist Hosp: Req AB-</span><span class="text-red-400 font-mono">Matching...</span></div>
+              <!-- Duplicate contents for infinite seamless loop -->
+              <div class="p-2 bg-red-950/30 border border-red-500/20 rounded text-[11px] flex justify-between text-gray-300"><span>🚨 FMC Keffi: Req O-</span><span class="text-red-400 font-mono">Matching...</span></div>
+              <div class="p-2 bg-slate-900/80 border border-white/5 rounded text-[11px] flex justify-between text-gray-300"><span>✅ Node 042: Assigned A+</span><span class="text-emerald-400 font-mono">Secured</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CHALLENGE SECTION -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-white/5 relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl font-bold mb-4">The Challenge</h2>
+      <p class="text-gray-400">Critical delays in matching rare blood groups directly impact medical emergencies daily.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="glass-panel p-8 glass-card-interactive">
+        <div class="text-2xl mb-3">⏳</div>
+        <h3 class="text-xl font-semibold mb-2 text-white">Critical Latency</h3>
+        <p class="text-gray-400 text-sm">Emergency response configurations leave zero margin for physical communication structures.</p>
+      </div>
+      <div class="glass-panel p-8 glass-card-interactive">
+        <div class="text-2xl mb-3">🗄️</div>
+        <h3 class="text-xl font-semibold mb-2 text-white">Information Silos</h3>
+        <p class="text-gray-400 text-sm">Blood bank units operate in isolated data architectures, slowing down emergency sourcing.</p>
+      </div>
+      <div class="glass-panel p-8 glass-card-interactive">
+        <div class="text-2xl mb-3">📊</div>
+        <h3 class="text-xl font-semibold mb-2 text-white">Supply Deficits</h3>
+        <p class="text-gray-400 text-sm">Lack of predictive supply maps blocks preventative distribution across regional centers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW HOW IT WORKS SECTION (RICH CONTENT ARCHITECTURE) -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-white/5 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-3xl font-bold mb-4">Operational Architecture</h2>
+      <p class="text-gray-400">How HemoLink orchestrates real-time donor dispatching.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="p-6 bg-slate-900/40 border border-white/5 rounded-xl">
+        <div class="w-8 h-8 rounded-full bg-red-950 text-red-400 font-bold flex items-center justify-center text-xs mb-4 border border-red-500/30">01</div>
+        <h4 class="text-white font-semibold mb-2 text-sm">Ingestion</h4>
+        <p class="text-gray-400 text-xs leading-relaxed">Hospitals dispatch urgent requests directly via secure portal channels.</p>
+      </div>
+      <div class="p-6 bg-slate-900/40 border border-white/5 rounded-xl">
+        <div class="w-8 h-8 rounded-full bg-red-950 text-red-400 font-bold flex items-center justify-center text-xs mb-4 border border-red-500/30">02</div>
+        <h4 class="text-white font-semibold mb-2 text-sm">Triage Analysis</h4>
+        <p class="text-gray-400 text-xs leading-relaxed">System instantly cross-references compatibility matrix patterns.</p>
+      </div>
+      <div class="p-6 bg-slate-900/40 border border-white/5 rounded-xl">
+        <div class="w-8 h-8 rounded-full bg-red-950 text-red-400 font-bold flex items-center justify-center text-xs mb-4 border border-red-500/30">03</div>
+        <h4 class="text-white font-semibold mb-2 text-sm">Broadcast Dispatch</h4>
+        <p class="text-gray-400 text-xs leading-relaxed">Proximity algorithms activate verified local emergency donor arrays.</p>
+      </div>
+      <div class="p-6 bg-slate-900/40 border border-white/5 rounded-xl">
+        <div class="w-8 h-8 rounded-full bg-red-950 text-red-400 font-bold flex items-center justify-center text-xs mb-4 border border-red-500/30">04</div>
+        <h4 class="text-white font-semibold mb-2 text-sm">Secure Delivery</h4>
+        <p class="text-gray-400 text-xs leading-relaxed">Donors track routing tokens directly to the recipient medical hub.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPATIBILITY MATRIX MATRIX SECTION -->
+  <section class="max-w-7xl mx-auto px-6 py-20 border-t border-white/5">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-3xl font-bold mb-4">Interactive Compatibility Matrix</h2>
+      <p class="text-gray-400 text-sm">Select a specific phenotype to calculate real-time compatibility profiles.</p>
+    </div>
+    <div class="grid lg:grid-cols-3 gap-12 items-center">
+      <div class="lg:col-span-2 grid grid-cols-4 gap-4">
+        <div data-group="O-" class="blood-grid-item border border-white/10 glass-panel p-6 text-center cursor-pointer font-bold text-xl hover:border-[#C1121F] transition-all">O-</div>
+        <div data-group="O+" class="blood-grid-item border border-white/10 glass-panel p-6 text-center cursor-pointer font-bold text-xl hover:border-[#C1121F] transition-all">O+</div>
+        <div data-group="A-" class="blood-grid-item border border-white/10 glass-panel p-6 text-center cursor-pointer font-bold text-xl hover:border-[#C1121F] transition-all">A-</div>
+        <div data-group="A+" class="blood-grid-item border border-white/10 glass-panel p-6 text-center cursor-pointer font-bold text-xl hover:border-[#C1121F] transition-all">A+</div>
+        <div data-group="B-" class="blood-grid-item border border-white/10 glass-panel p-6 text-center cursor-pointer font-bold text-xl hover:border-[#C1121F] transition-all">B-</div>
+        <div data-group="B+" class="blood-grid-item border border-white/10 glass-panel p-6 text-center cursor-pointer font-bold text-xl hover:border-[#C1121F] transition-all">B+</div>
+        <div data-group="AB-" class="blood-grid-item border border-white/10 glass-panel p-6 text-center cursor-pointer font-bold text-xl hover:border-[#C1121F] transition-all">AB-</div>
+        <div data-group="AB+" class="blood-grid-item border border-white/10 glass-panel p-6 text-center cursor-pointer font-bold text-xl hover:border-[#C1121F] transition-all">AB+</div>
+      </div>
+      <div class="glass-panel p-8 border border-white/10 space-y-6">
+        <div>
+          <h4 class="text-sm uppercase tracking-wider text-gray-400 mb-2">Can Donate To:</h4>
+          <div id="compat-gives" class="flex flex-wrap gap-2 text-gray-500 text-sm">Select a phenotype to initialize...</div>
+        </div>
+        <div class="border-t border-white/5 pt-4">
+          <h4 class="text-sm uppercase tracking-wider text-gray-400 mb-2">Can Receive From:</h4>
+          <div id="compat-receives" class="flex flex-wrap gap-2 text-gray-500 text-sm">Select a phenotype to initialize...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 border-t border-white/10 px-6 py-12 relative z-10 text-center text-xs text-gray-500">
+    <p class="mb-2">Developed by: Akolo Amos &bull; Blessing Joseph &bull; Matthew Oboshi &bull; Thomas Silas &bull; Oju Omoseke</p>
+    <p>&copy; 2026 HemoLink. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
